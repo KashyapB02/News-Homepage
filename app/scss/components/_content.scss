@@ -1,0 +1,177 @@
+@use '../utils' as ut;
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: ut.rem(24);
+
+    @include ut.mediaQuery(min, md) {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    @include ut.mediaQuery(min, lg) {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    &__main {
+        &__imgContainer {
+            @include ut.grid-box;
+
+            &--mobileImg {
+                @include ut.mediaQuery(min, sm) {
+                    display: none;
+                }
+            }
+
+            &--desktopImg {
+                display: none;
+
+                @include ut.mediaQuery(min, sm) {
+                    display: inline-block;
+                }
+            }
+        }
+
+        &__textContent {
+            padding-block: ut.em(14);
+            @include ut.flex(
+                $dir: column,
+                $gap: ut.rem(14),
+                $align: flex-start
+            );
+
+            @include ut.mediaQuery(min, lg) {
+                @include ut.flex(
+                    $gap: ut.rem(18),
+                    $align: flex-start
+                );
+
+                > * {
+                    flex: 1;
+                }
+            }
+
+            &__heading {
+                color: ut.$clr-veryDarkBlue;
+                font-size: ut.rem(25);
+                font-weight: ut.$fw-extraBold;
+
+                @include ut.mediaQuery(min, sm) {
+                    font-size: ut.rem(32);
+                }
+
+                @include ut.mediaQuery(min, md) {
+                    font-size: ut.rem(40);
+                }
+            }
+
+            &__descriptionContainer {
+                @include ut.flex(
+                    $dir: column,
+                    $gap: ut.rem(14),
+                    $align: flex-start
+                );
+
+                &__description {
+                    color: ut.$clr-darkGrayishBlue;
+                    line-height: 1.4;
+
+                    @include ut.mediaQuery(min, md) {
+                        font-size: ut.rem(16);
+                    }
+                }
+
+                &__btn {
+                    border: 0;
+                    text-transform: uppercase;
+                    color: ut.$clr-white;
+                    font-size: ut.rem(12);
+                    font-weight: ut.$fw-bold;
+                    letter-spacing: 0.1em;
+                    padding: 0.75em 2em;
+                    background-color: ut.$clr-veryDarkBlue;
+                    transition: background-color 150ms linear;
+
+                    &:hover {
+                        background-color: ut.$clr-softRed;
+                    }
+
+                    @include ut.mediaQuery(min, md) {
+                        font-size: ut.rem(14);
+                    }
+                }
+            }
+        }
+    }
+
+    &__aside {
+        width: 100%;
+        padding: ut.em(16);
+        margin-top: ut.rem(10);
+        background-color: ut.$clr-veryDarkBlue;
+        color: ut.$clr-white;
+        @include ut.flex(
+            $dir: column,
+            $gap: 0,
+            $align: flex-start
+        );
+
+        @include ut.mediaQuery(min, md) {
+            margin-top: 0;
+            @include ut.flex(
+                $dir: column,
+                $gap: 0,
+                $align: flex-start,
+                $justify: flex-start
+            );
+        }
+
+        &__heading {
+            color: ut.$clr-softOrange;
+            font-size: ut.rem(22);
+
+            @include ut.mediaQuery(min, md) {
+                font-size: ut.rem(25);
+            }
+
+            @include ut.mediaQuery(min, md) {
+                font-size: ut.rem(30);
+            }
+        }
+
+        &__newsList {
+            width: 100%;
+
+            &__listItems {
+                padding-block: ut.em(25);
+                width: 100%;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid ut.$clr-darkGrayishBlue;
+                }
+
+                &__heading {
+                    transition: color 100ms linear;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: ut.$clr-softOrange;
+                    }
+
+                    @include ut.mediaQuery(min, md) {
+                        font-size: ut.rem(16);
+                    }
+        
+                    @include ut.mediaQuery(min, lg) {
+                        font-size: ut.rem(18);
+                    }
+                }
+
+                &__description {
+                    line-height: 1.3;
+                    margin-top: ut.rem(8);
+                }
+            }
+        }
+    }
+}

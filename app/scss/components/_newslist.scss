@@ -1,0 +1,103 @@
+@use '../utils' as ut;
+
+.newslist {
+    width: 100%;
+    padding-block: ut.em(10);
+    margin-top: ut.rem(10);
+    @include ut.flex(
+        $dir: column,
+        $gap: ut.rem(20),
+        $align: flex-start
+    );
+
+    @include ut.mediaQuery(min, md) {
+        @include ut.flex(
+            $dir: row,
+            $gap: ut.rem(20),
+            $justify: flex-start
+        );
+        flex-wrap: wrap;
+
+        > * {
+            flex-basis: calc(50% - ut.rem(20));
+        }
+    }
+
+    @include ut.mediaQuery(min, lg) {
+        > * {
+            flex-basis: calc(33% - ut.rem(20));
+        }
+    }
+
+    &__listItems {
+        @include ut.flex(
+            $gap: ut.rem(10),
+            $align: flex-start
+        );
+
+        &:hover {
+            .newslist__listItems__newsContent {
+                &__newsCounter {
+                    color: ut.$clr-darkGrayishBlue;
+                }
+
+                &__newsHeading {
+                    color: ut.$clr-softRed;
+                }
+            }
+        }
+
+        &__newsThumbnail {
+            @include ut.grid-box;
+            width: ut.rem(75);
+
+            @include ut.mediaQuery(min, md) {
+                width: ut.rem(80);
+            }
+
+            @include ut.mediaQuery(min, lg) {
+                width: ut.rem(90);
+            }
+        }
+
+        &__newsContent {
+            flex: 1;
+
+            &__newsCounter {
+                color: ut.$clr-grayishBlue;
+                font-size: ut.rem(22);
+                font-weight: ut.$fw-semibold;
+                transition: color 100ms linear;
+
+                @include ut.mediaQuery(min, lg) {
+                    font-size: ut.rem(24);
+                }
+            }
+
+            &__newsHeading {
+                transition: color 100ms linear;
+                cursor: pointer;
+                margin-block: ut.rem(3);
+
+                @include ut.mediaQuery(min, md) {
+                    margin-block: ut.rem(4);
+                    font-size: ut.rem(16);
+                }
+    
+                @include ut.mediaQuery(min, lg) {
+                    margin-block: ut.rem(5);
+                    font-size: ut.rem(18);
+                }
+            }
+
+            &__newsDescription {
+                color: ut.$clr-darkGrayishBlue;
+                line-height: 1.4;
+
+                @include ut.mediaQuery(max, md) {
+                    font-size: ut.rem(14);
+                }
+            }
+        }
+    }
+}

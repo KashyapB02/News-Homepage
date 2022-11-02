@@ -1,0 +1,44 @@
+@forward './components';
+@use './utils' as ut;
+
+.app {
+    @include ut.flex(
+        $dir: column,
+        $gap: ut.rem(24),
+        $justify: flex-start
+    );
+
+    @include ut.mediaQuery(min, md) {
+        @include ut.flex(
+            $dir: column,
+            $gap: ut.rem(36),
+            $justify: flex-start
+        )
+    }
+
+    @include ut.mediaQuery(min, md) {
+        @include ut.flex(
+            $dir: column,
+            $gap: ut.rem(48),
+            $justify: flex-start
+        )
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.attribution {
+    font-size: ut.rem(13);
+    text-align: center;
+
+    a {
+        color: ut.$clr-softRed;
+        transition: color 150ms linear;
+
+        &:hover {
+            color: ut.$clr-softOrange;
+        }
+    }
+}

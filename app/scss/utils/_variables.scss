@@ -1,0 +1,33 @@
+@use 'functions' as fn;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extraBold: 800;
+
+$clr-black: hsl(0, 0%, 0%);
+$clr-black-40: hsl(0, 0%, 0%, 0.4);
+$clr-white: hsl(0, 0%, 100%);
+$clr-softOrange: hsl(35, 77%, 62%);
+$clr-softRed: hsl(5, 85%, 63%);
+$clr-offWhite: hsl(36, 100%, 99%);
+$clr-grayishBlue: hsl(233, 8%, 79%);
+$clr-darkGrayishBlue: hsl(236, 13%, 42%);
+$clr-veryDarkBlue: hsl(240, 100%, 5%);
+
+$gap-flex: fn.rem(30);
+
+$breakpoints-min: (
+    "xs": fn.em(375),
+    "sm": fn.em(480),
+    "md": fn.em(768),
+    "lg": fn.em(1280),
+);
+
+$breakpoints-max: (
+    "xs": fn.em(374.98),
+    "sm": fn.em(479.98),
+    "md": fn.em(767.98),
+    "lg": fn.em(1279.98),
+);

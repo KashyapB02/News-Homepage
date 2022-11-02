@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== Mets Tags ===== -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#DA532C">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- ===== Favicons ===== -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./app/assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./app/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./app/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="./app/assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="./app/assets/favicons/safari-pinned-tab.svg" color="#5BBAD5">
+
+  <!-- ===== Fonts Preconnect ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ===== Stylesheets ===== -->
+  <link rel="stylesheet" href="./app/css/main.css">
+
+  <!-- ===== Page Title ===== -->
+  <title>News homepage | Frontend Mentor</title>
+
+</head>
+<body class="app">
+  <header class="header">
+    <nav class="header__navbar">
+      <a href="/">
+        <span class="header__navbar__logoContainer">
+          <img src="./app/assets/logo.svg" alt="News-Homepage">
+        </span>
+      </a>
+      <span class="header__navbar__menuToggleIcon">
+        <img src="./app/assets/icon-menu.svg" alt="Menu" class="header__navbar__menuToggleIcon--menu" id="menuToggleIcon--menu" />
+        <img src="./app/assets/icon-menu-close.svg" alt="Close" class="header__navbar__menuToggleIcon--close hidden" id="menuToggleIcon--close" />
+      </span>
+      <div class="header__navbar__navListContainer hidden" id="navListContainer">
+        <ul class="header__navbar__navListContainer__navList">
+          <a href="/">
+            <li class="header__navbar__navListContainer__navList__listItems">Home</li>
+          </a>
+          <a href="/">
+            <li class="header__navbar__navListContainer__navList__listItems">New</li>
+          </a>
+          <a href="/">
+            <li class="header__navbar__navListContainer__navList__listItems">Popular</li>
+          </a>
+          <a href="/">
+            <li class="header__navbar__navListContainer__navList__listItems">Trending</li>
+          </a>
+          <a href="/">
+            <li class="header__navbar__navListContainer__navList__listItems">Categories</li>
+          </a>
+        </ul>
+      </div>
+      <ul class="header__navbar__navList">
+        <a href="/">
+          <li class="header__navbar__navList__listItems">Home</li>
+        </a>
+        <a href="/">
+          <li class="header__navbar__navList__listItems">New</li>
+        </a>
+        <a href="/">
+          <li class="header__navbar__navList__listItems">Popular</li>
+        </a>
+        <a href="/">
+          <li class="header__navbar__navList__listItems">Trending</li>
+        </a>
+        <a href="/">
+          <li class="header__navbar__navList__listItems">Categories</li>
+        </a>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <main class="content__main">
+      <span class="content__main__imgContainer">
+        <img src="./app/assets/image-web-3-mobile.jpg" alt="Web-3" class="content__main__imgContainer--mobileImg">
+        <img src="./app/assets/image-web-3-desktop.jpg" alt="Web-3" class="content__main__imgContainer--desktopImg">
+      </span>
+      <div class="content__main__textContent">
+        <h1 class="content__main__textContent__heading">The Bright Future of Web 3.0?</h1>
+        <div class="content__main__textContent__descriptionContainer">
+          <p class="content__main__textContent__descriptionContainer__description">
+            We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
+          </p>
+          <a href="/">
+            <button type="button" class="content__main__textContent__descriptionContainer__btn">
+              Read more
+            </button>
+          </a>
+        </div>
+      </div>
+    </main>
+    <aside class="content__aside">
+      <h2 class="content__aside__heading">New</h2>
+      <ul class="content__aside__newsList">
+        <li class="content__aside__newsList__listItems">
+          <a href="/">
+            <h4 class="content__aside__newsList__listItems__heading">Hydrogen VS Electric Cars</h4>
+          </a>
+          <p class="content__aside__newsList__listItems__description">
+            Will hydrogen-fueled cars ever catch up to EVs?
+          </p>
+        </li>
+        <li class="content__aside__newsList__listItems">
+          <a href="/">
+            <h4 class="content__aside__newsList__listItems__heading">The Downsides of AI Artistry</h4>
+          </a>
+          <p class="content__aside__newsList__listItems__description">
+            What are the possible adverse effects of on-demand AI image generation?
+          </p>
+        </li>
+        <li class="content__aside__newsList__listItems">
+          <a href="/">
+            <h4 class="content__aside__newsList__listItems__heading">Is VC Funding Drying Up?</h4>
+          </a>
+          <p class="content__aside__newsList__listItems__description">
+            Private funding by VC firms is down 50% YOY. We take a look at what that means.
+          </p>
+        </li>
+      </ul>
+    </aside>
+  </div>
+
+  <ul class="newslist">
+    <a href="/">
+      <li class="newslist__listItems">
+        <span class="newslist__listItems__newsThumbnail">
+          <img src="./app/assets/image-retro-pcs.jpg" alt="News-1" class="newslist__listItems__newsThumbnail__img">
+        </span>
+        <div class="newslist__listItems__newsContent">
+          <span class="newslist__listItems__newsContent__newsCounter">01</span>
+          <h4 class="newslist__listItems__newsContent__newsHeading">
+            Reviving Retro PCs
+          </h4>
+          <p class="newslist__listItems__newsContent__newsDescription">
+            What happens when old PCs are given modern upgrades?
+          </p>
+        </div>
+      </li>
+    </a>
+    <a href="/">
+      <li class="newslist__listItems">
+        <span class="newslist__listItems__newsThumbnail">
+          <img src="./app/assets/image-top-laptops.jpg" alt="News-2" class="newslist__listItems__newsThumbnail__img">
+        </span>
+        <div class="newslist__listItems__newsContent">
+          <span class="newslist__listItems__newsContent__newsCounter">02</span>
+          <h4 class="newslist__listItems__newsContent__newsHeading">
+            Top 10 Laptops of 2022
+          </h4>
+          <p class="newslist__listItems__newsContent__newsDescription">
+            Our best picks for various needs and budgets.
+          </p>
+        </div>
+      </li>
+    </a>
+    <a href="/">
+      <li class="newslist__listItems">
+        <span class="newslist__listItems__newsThumbnail">
+          <img src="./app/assets/image-gaming-growth.jpg" alt="News-3" class="newslist__listItems__newsThumbnail__img">
+        </span>
+        <div class="newslist__listItems__newsContent">
+          <span class="newslist__listItems__newsContent__newsCounter">03</span>
+          <h4 class="newslist__listItems__newsContent__newsHeading">
+            The Growth of Gaming
+          </h4>
+          <p class="newslist__listItems__newsContent__newsDescription">
+            How the pandemic has sparked fresh opportunities.
+          </p>
+        </div>
+      </li>
+    </a>
+  </ul>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/kashyap1905" target="_blank">Bobby Kumar</a>.
+  </div>
+
+  <!-- ===== Scripts ===== -->
+  <script src="./app/scripts/app.js"></script>
+</body>
+</html>

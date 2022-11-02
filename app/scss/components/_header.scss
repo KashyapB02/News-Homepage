@@ -1,0 +1,105 @@
+@use '../utils' as ut;
+
+.header {
+    width: 100%;
+
+    &__navbar {
+        @include ut.flex(
+            $gap: 0,
+            $justify: space-between
+        );
+
+        &__logoContainer {
+            @include ut.grid-box;
+            width: ut.rem(40);
+            height: ut.rem(20);
+
+            @include ut.mediaQuery(min, md) {
+                width: ut.rem(50);
+                height: ut.rem(25);
+            }
+        }
+
+        &__menuToggleIcon {
+            @include ut.grid-box;
+            z-index: 99999;
+
+            @include ut.mediaQuery(min, md) {
+                display: none;
+            }
+
+            &--menu {
+                height: ut.rem(14);
+                width: ut.rem(28);
+            }
+
+            &--close {
+                height: ut.rem(20);
+                width: ut.rem(20);
+            }
+        }
+
+        &__navListContainer {
+            position: absolute;
+            inset: 0;
+            background-color: ut.$clr-black-40;
+
+            &__navList {
+                width: 67%;
+                max-width: ut.rem(250);
+                margin-left: auto;
+                padding-top: ut.em(120);
+                padding-inline: ut.em(20);
+                background-color: ut.$clr-white;
+                height: 100%;
+                animation-name: ut.$an-slideInRight;
+                animation-duration: 200ms;
+                animation-timing-function: linear;
+                @include ut.flex(
+                    $dir: column,
+                    $gap: ut.rem(24),
+                    $justify: flex-start,
+                    $align: flex-start
+                );
+
+                > a {
+                    @include ut.grid-box;
+                    text-transform: uppercase;
+                    font-size: ut.rem(14);
+                    font-weight: ut.$fw-medium;
+    
+                    li {
+                        color: inherit;
+                    }
+                }
+            }
+        }
+
+        &__navList {
+            display: none;
+
+            @include ut.mediaQuery(min, md) {
+                @include ut.flex($gap: ut.rem(40));
+            }
+
+            > a {
+                @include ut.grid-box;
+                text-transform: uppercase;
+                font-weight: ut.$fw-medium;
+
+                @include ut.mediaQuery(min, lg) {
+                    font-size: ut.rem(16);
+                    transition: color 150ms linear;
+
+                    &:hover {
+                        color: ut.$clr-softRed;
+                    }
+                }
+
+                li {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}

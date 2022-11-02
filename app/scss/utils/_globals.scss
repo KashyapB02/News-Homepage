@@ -1,0 +1,92 @@
+@use 'functions' as fn;
+@use 'variables' as var;
+@use 'mixins' as mx;
+
+html, html:focus-within {
+    font-size: 100%;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: inherit;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    min-height: 100vh;
+    padding-inline: fn.em(14);
+    padding-block: fn.em(20) fn.em(42);
+    font-size: fn.rem(15);
+    font-weight: var.$fw-regular;
+    font-family: 'Inter', sans-serif;
+    text-rendering: optimizeSpeed;
+    overflow-x: hidden;
+    position: relative;
+    background-color: var.$clr-offWhite;
+
+    @include mx.mediaQuery(min, md) {
+        padding-inline: fn.em(42);
+        padding-block: fn.em(30) fn.em(42);
+    }
+
+    @include mx.mediaQuery(min, lg) {
+        padding-inline: fn.em(98);
+        padding-block: fn.em(40) fn.em(70);
+    }
+}
+
+h1, h2, h3 {
+    line-height: 1.1;
+    margin-block: 0;
+}
+
+p {
+    margin-block: 0;
+    color: inherit;
+}
+
+a, a:visited, a:active {
+    color: unset;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul, ol {
+    list-style-type: none;
+    margin: 0;
+}
+
+img, svg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font: inherit;
+}
+
+nav {
+    z-index: 999;
+}

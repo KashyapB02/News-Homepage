@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'variables' as var;
+
+@mixin flex(
+    $dir: row,
+    $gap: var.$gap-flex,
+    $justify: center,
+    $align: center
+) {
+    display: flex;
+    flex-direction: $dir;
+    gap: $gap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin grid-box {
+    display: grid;
+    place-content: center;
+}
+
+@mixin mediaQuery(
+    $type,
+    $breakpoint
+) {
+    @if $type == min {
+        @media screen and (min-width: map-get(var.$breakpoints-min, $breakpoint)) {
+            @content
+        };
+    } @else {
+        @media screen and (max-width: map-get(var.$breakpoints-max, $breakpoint)) {
+            @content
+        };
+    }
+}
